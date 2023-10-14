@@ -3,9 +3,11 @@
  * @param {JsonObject} theme theme customization object
  */
 
+import config from 'config';
+
 export default function themeTypography(theme) {
   return {
-    fontFamily: theme?.customization?.fontFamily,
+    fontFamily: config.fontFamily,
     h6: {
       fontWeight: 500,
       color: theme.heading,
@@ -94,7 +96,7 @@ export default function themeTypography(theme) {
       padding: '20px',
       marginTop: '88px',
       marginRight: '20px',
-      borderRadius: `${theme?.customization?.borderRadius}px`,
+      borderRadius: `12px`,
     },
     menuCaption: {
       fontSize: '0.875rem',
