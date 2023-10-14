@@ -1,5 +1,3 @@
-import { destroyCookie, parseCookies } from 'nookies';
-
 export const getHost = () => {
   return 'https://apipath';
 };

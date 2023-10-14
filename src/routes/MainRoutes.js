@@ -8,15 +8,15 @@ import Loadable from 'ui-component/Loadable';
 const DashboardDefault = Loadable(lazy(() => import('views/dashboard/Default')));
 
 const MainRoutes = {
-  path: '/',
+  path: '/app',
   element: <MainLayout />,
   children: [
     {
-      path: '/',
+      path: '/app',
       element: <DashboardDefault />,
     },
     {
-      path: 'dashboard',
+      path: 'app/dashboard',
       children: [
         {
           path: 'default',

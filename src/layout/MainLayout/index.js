@@ -9,10 +9,8 @@ import { AppBar, Box, CssBaseline, Toolbar, useMediaQuery } from '@mui/material'
 import Breadcrumbs from 'ui-component/extended/Breadcrumbs';
 import Header from './Header';
 import Sidebar from './Sidebar';
-import Customization from '../Customization';
 import navigation from 'menu-items';
 import { drawerWidth } from 'store/constant';
-import { SET_MENU } from 'store/actions';
 
 // assets
 import { IconChevronRight } from '@tabler/icons';
@@ -59,11 +57,8 @@ const MainLayout = () => {
   const theme = useTheme();
   const matchDownMd = useMediaQuery(theme.breakpoints.down('md'));
   // Handle left drawer
-  const leftDrawerOpened = useSelector((state) => state.customization.opened);
   const dispatch = useDispatch();
-  const handleLeftDrawerToggle = () => {
-    dispatch({ type: SET_MENU, opened: !leftDrawerOpened });
-  };
+  const handleLeftDrawerToggle = () => {};
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -76,7 +71,7 @@ const MainLayout = () => {
         elevation={0}
         sx={{
           bgcolor: theme.palette.background.default,
-          transition: leftDrawerOpened ? theme.transitions.create('width') : 'none',
+          transition: 'none',
         }}
       >
         <Toolbar>
@@ -85,18 +80,14 @@ const MainLayout = () => {
       </AppBar>
 
       {/* drawer */}
-      <Sidebar
-        drawerOpen={!matchDownMd ? leftDrawerOpened : !leftDrawerOpened}
-        drawerToggle={handleLeftDrawerToggle}
-      />
+      <Sidebar drawerOpen={!matchDownMd} drawerToggle={handleLeftDrawerToggle} />
 
       {/* main content */}
-      <Main theme={theme} open={leftDrawerOpened}>
+      <Main theme={theme} open={true}>
         {/* breadcrumb */}
         <Breadcrumbs separator={IconChevronRight} navigation={navigation} icon title rightAlign />
         <Outlet />
       </Main>
-      <Customization />
     </Box>
   );
 };

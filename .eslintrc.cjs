@@ -1,7 +1,8 @@
 module.exports = {
   env: {
     node: true,
-    es2021: true,
+    browser: true,
+    es6: true,
   },
   extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:prettier/recommended'],
   overrides: [],
@@ -15,6 +16,7 @@ module.exports = {
     'react/prop-types': 0,
     'no-constant-condition': 0,
     'no-unused-vars': 1,
+    'react-hooks/exhaustive-deps': 0,
     'prettier/prettier': ['error', { endOfLine: 'auto' }],
   },
 };

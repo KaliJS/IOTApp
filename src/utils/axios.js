@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { getHost } from 'core/configs/environment';
+import { getHost } from 'configs/environment';
 
 const axiosInstance = () => {
-  let token = localStorage.getItem('token');
+  let token = window.localStorage.getItem('token');
   let tokenType = 'JWT';
   let url = '/login';
 

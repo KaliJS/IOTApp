@@ -30,7 +30,6 @@ import { Formik } from 'formik';
 import useScriptRef from 'hooks/useScriptRef';
 import Google from 'assets/images/icons/social-google.svg';
 import AnimateButton from 'ui-component/extended/AnimateButton';
-import { strengthColor, strengthIndicator } from 'utils/password-strength';
 
 // assets
 import Visibility from '@mui/icons-material/Visibility';
@@ -61,11 +60,7 @@ const FirebaseRegister = ({ ...others }) => {
     event.preventDefault();
   };
 
-  const changePassword = (value) => {
-    const temp = strengthIndicator(value);
-    setStrength(temp);
-    setLevel(strengthColor(temp));
-  };
+  const changePassword = (value) => {};
 
   useEffect(() => {
     changePassword('123456');
